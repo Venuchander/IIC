@@ -1,7 +1,6 @@
 "use client"
 import React from 'react'
-import Navbar from '@/components/navbar'
-export default function TimelinePage() {
+export default function Event() {
   const events = [
     {
       date: "March 2024",
@@ -26,7 +25,6 @@ export default function TimelinePage() {
 
   return (
     <>
-    <Navbar />
     <main className="min-h-screen pt-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
