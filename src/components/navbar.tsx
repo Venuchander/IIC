@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useState, useCallback } from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -27,13 +28,15 @@ export default function Navbar() {
             : "w-[95%] sm:w-[90%] md:w-[80%] lg:w-[75%] py-3 sm:py-4 bg-white/90 backdrop-blur-md"
         } rounded-full border border-black/10`}
       >
-        {/* Logo Added Here */}
-        <div> {/* Add margin bottom for spacing */}
+        {/* Logo */}
+        <div>
           <Link href="/" className="flex items-center gap-2 sm:gap-3">
-            <img
-              src="/iic.png" // Fixed the logo path
+            <Image
+              src="/iic.png"
               alt="IIE CENTER Logo"
-              className="h-8 w-auto sm:h-15 md:h-10" // Adjust height as needed
+              width={40}
+              height={40}
+              className="h-8 w-auto sm:h-15 md:h-10"
             />
             <span className="text-black font-medium text-xs sm:text-sm md:text-base">IIE CENTER</span>
           </Link>
@@ -45,7 +48,7 @@ export default function Navbar() {
             scrolled ? "ml-auto mr-0" : "mx-auto"
           }`}
         >
-          <Link href="/hero" className="text-black/80 hover:text-black transition-colors text-sm">
+          <Link href="/" className="text-black/80 hover:text-black transition-colors text-sm">
             Home
           </Link>
           <Link href="/about" className="text-black/80 hover:text-black transition-colors text-sm">
@@ -54,18 +57,18 @@ export default function Navbar() {
           <Link href="/Team" className="text-black/80 hover:text-black transition-colors text-sm">
             Our Team
           </Link>
-          <Link href="/Timeline" className="text-black/80 hover:text-black transition-colors text-sm">
+          <Link href="/timeline" className="text-black/80 hover:text-black transition-colors text-sm">
             Events
           </Link>
           <Link href="/contact" className="text-black/80 hover:text-black transition-colors text-sm">
             Contact
           </Link>
-          <Link href="/contact" className="text-black/80 hover:text-black transition-colors text-sm">
+          <Link href="/blogs" className="text-black/80 hover:text-black transition-colors text-sm">
             Blogs
           </Link>
         </div>
 
-        {/* Get Started Button with animated exit - Desktop */}
+        {/* Get Started Button - Desktop */}
         <div
           className={`hidden md:block ml-4 lg:ml-6 transition-all duration-300 ${
             scrolled ? "opacity-0 w-0 overflow-hidden" : "opacity-100 w-auto"
@@ -114,18 +117,27 @@ export default function Navbar() {
         }`}
       >
         <div className="flex flex-col gap-5">
-          <Link href="#" className="text-black/80 hover:text-black transition-colors text-sm font-medium py-2">
+          <Link href="/" className="text-black/80 hover:text-black transition-colors text-sm font-medium py-2">
             Home
           </Link>
-          <Link href="#" className="text-black/80 hover:text-black transition-colors text-sm font-medium py-2">
-            Product
+          <Link href="/about" className="text-black/80 hover:text-black transition-colors text-sm font-medium py-2">
+            About
+          </Link>
+          <Link href="/team" className="text-black/80 hover:text-black transition-colors text-sm font-medium py-2">
+            Our Team
+          </Link>
+          <Link href="/timeline" className="text-black/80 hover:text-black transition-colors text-sm font-medium py-2">
+            Events
           </Link>
           <Link href="/contact" className="text-black/80 hover:text-black transition-colors text-sm font-medium py-2">
             Contact
           </Link>
+          <Link href="/blogs" className="text-black/80 hover:text-black transition-colors text-sm font-medium py-2">
+            Blogs
+          </Link>
           <div className="pt-2">
             <button className="w-full whitespace-nowrap rounded-full bg-gray-200 text-black text-sm font-medium hover:bg-gray-300 px-5 py-3">
-              Get Started
+              Join Us
             </button>
           </div>
         </div>

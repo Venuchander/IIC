@@ -1,5 +1,5 @@
 import Image from "next/image"
-
+import Navbar from "@/components/navbar"
 // Generate 27 team members (9 rows × 3 columns)
 const teamMembers = Array.from({ length: 27 }, (_, i) => ({
   name: `Team Member ${i + 1}`,
@@ -15,6 +15,8 @@ const teamMembers = Array.from({ length: 27 }, (_, i) => ({
 
 export default function TeamGrid() {
   return (
+    <>
+    <Navbar />
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto px-4">
       {teamMembers.map((member, index) => (
         <div key={index} className="flex flex-col">
@@ -33,5 +35,6 @@ export default function TeamGrid() {
         </div>
       ))}
     </div>
+    </>
   )
 }
