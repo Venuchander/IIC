@@ -38,7 +38,7 @@ export default function Navbar() {
               height={40}
               className="h-8 w-auto sm:h-15 md:h-10"
             />
-            <span className="text-black font-medium text-xs sm:text-sm md:text-base">IIE CENTER</span>
+            <span className="text-black font-medium text-xs sm:text-sm md:text-base">IIC CENTER</span>
           </Link>
         </div>
 
